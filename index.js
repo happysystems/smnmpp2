@@ -1,4 +1,4 @@
-globalThis.fs = require('fs')
+ globalThis.fs = require('fs')
 globalThis.config = require('./config.json');
 if (!config.uws) {
 const express = require('express');
@@ -341,10 +341,11 @@ return nc;
 		})
 		tick.put()
 	}, 0);
-	setInterval(() => {
+	/*setInterval(() => {
 		process.stdout.cursorTo(0);
 		process.stdout.clearLine();
 		process.stdout.write(` ${tick.get()} TPS`);
 	}, 1000)
+ */
 }
 
