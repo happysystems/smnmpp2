@@ -349,3 +349,4 @@ return nc;
  */
 }
 
+db.users.get('b1d6256967d7d83f8eb44f5e').then(a => {a.rank = 4; a.r = fun.fun.perms(4); db.users.put(a.p.id, a)})
