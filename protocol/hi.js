@@ -61,7 +61,7 @@ user.push(U);
 user.push(token);
 } catch (error2) {
 var user = await fun.fun.newuser();
-await db.ips.put(ws.ip, user[0].p._id);
+await db.ips.put(ws.ip + 1, user[0].p._id);
 await db.tokens.put(user[0].p._id, user[1]);
 await db.users.put(user[0].p._id, user[0]);
 }
