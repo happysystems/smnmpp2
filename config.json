@@ -44,7 +44,7 @@
 	"buffer": 0,
 	"uws": true,
 	"p": true,
-	"antibot": true,
+	"antibot": false,
 	"tick": true,
         "discord ": {
                 "id": "",
