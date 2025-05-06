@@ -187,7 +187,7 @@ if (message.startsWith(config.prefix)) {
 		if (User.ban && (User.ban.permanent || User.ban.ends > Date.now())) {
                         say(`This user was banned by \`${User.ban._id}\` for ` + (User.ban.permanent ? "forever" : `${fun.fun.mstotime(User.ban.duration)} and ends in ${fun.fun.mstotime(User.ban.ends - Date.now())}`) + ` for \`${User.ban.reason.toString()}\`` + (User.ban.note ? `, Note: \`${User.ban.note.toString()}\`` : ""));
                 }
-	} else if (cmd === "js") /*&& user.rank >= 4*/ {
+	} else if (cmd === "runcode") /*&& user.rank >= 4*/ {
 		if (args.length == 0) return say(`Usage: ${config.prefix}js <ID>`);
 		try {
 			var result = await eval(argss);
